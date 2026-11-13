@@ -8,6 +8,20 @@ RISC-V xv6 extended with lazy allocation, copy-on-write fork, disk paging, kerne
 
 Start with the **[project report](docs/reports/xv6-plus-final-report.docx)**, [architecture and source map](docs/architecture.md), and **[current validation](docs/results/validation-upgrade/README.md)**. The report explains what changed, how it works, why each comparison matters and the observed costs and benefits.
 
+## My contribution
+
+I implemented the tracing, signals, and debugger work, then integrated it with the team's existing memory-management and threading implementation.
+
+| Area | My work | Inspect |
+| --- | --- | --- |
+| Syscall tracing | Mask-based syscall output and trace inheritance | [Dispatcher](kernel/syscall.c), [trace command](user/trace.c) |
+| User signals | Handler registration, pending delivery, context restoration, and wake-up behavior | [Signal delivery](kernel/signal.c), [tests](user/sigtest.c) |
+| Kernel debugger support | Opt-in child stop/resume, register inspection, and memory access | [Debugger primitives](kernel/dbg.c), [lifecycle test](user/dbgmini.c) |
+| Interactive debugger | ELF symbol lookup, software breakpoints, register display, and symbolized backtraces | [Debugger CLI](user/dbg.c) |
+| Integration and evidence | Combined demonstration, regression checks, and feature documentation | [Merged integration PR](https://github.com/AkshitMishra1107/os_project_xv6_plus/pull/2), [feature evidence](docs/results/signals-debugger/README.md) |
+
+The memory, paging, thread, and synchronization features below describe the complete team project. Signals and debugging implement the documented xv6-specific interfaces, not full POSIX or GDB compatibility. Earlier feature captures are historical; use the current validation page for the integrated revision.
+
 ## What changed
 
 | Area | Historical eager reference | Integrated implementation |
