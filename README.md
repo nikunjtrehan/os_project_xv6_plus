@@ -1,5 +1,9 @@
 # xv6 Plus
 
+**Nikunj Trehan's fork of a team project by Akshit Mishra, Nikunj Trehan, and Pratyaksh Rana.**
+
+[Team repository](https://github.com/AkshitMishra1107/os_project_xv6_plus) · [My merged integration PR](https://github.com/AkshitMishra1107/os_project_xv6_plus/pull/2) · [Validation and comparisons](docs/results/validation-upgrade/README.md)
+
 RISC-V xv6 extended with lazy allocation, copy-on-write fork, disk paging, kernel threads, futex synchronization, syscall tracing, user signals and an in-guest debugger.
 
 Start with the **[project report](docs/reports/xv6-plus-final-report.docx)**, [architecture and source map](docs/architecture.md), and **[current validation](docs/results/validation-upgrade/README.md)**. The report explains what changed, how it works, why each comparison matters and the observed costs and benefits.
@@ -23,7 +27,7 @@ The reference is project v0.0 on historical MIT code. The initially cloned newer
 ## Build and try it
 
 ```bash
-git clone https://github.com/AkshitMishra1107/os_project_xv6_plus.git
+git clone https://github.com/nikunjtrehan/os_project_xv6_plus.git
 cd os_project_xv6_plus
 make clean
 make qemu CPUS=3 RAM_MB=128 SWAP_POLICY=1
